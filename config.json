@@ -1,0 +1,27 @@
+{
+  "locals": {
+    "url": "http://brett.is",
+    "name": "Brett Langdon's Blog",
+    "owner": "Brett Langdon",
+    "description": ""
+  },
+  "plugins": [
+    "./plugins/paginator.coffee"
+  ],
+  "require": {
+    "moment": "moment",
+    "_": "underscore",
+    "typogr": "typogr"
+  },
+  "jade": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true,
+    "gfm": true
+  },
+  "paginator": {
+    "perPage": 3
+  }
+}
