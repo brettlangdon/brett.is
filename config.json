@@ -1,9 +1,9 @@
 {
   "locals": {
     "url": "http://brett.is",
-    "name": "Brett Langdon's Blog",
+    "name": "Brett.Is",
     "owner": "Brett Langdon",
-    "description": ""
+    "description": "Personal Blog of Brett Langdon"
   },
   "plugins": [
     "./plugins/paginator.coffee"
