@@ -68,7 +68,7 @@ data = %r
     total = sum(timer.repeat(repeat=repeat, number=number))
     per_call = total / (number * repeat)
     print "%s.dumps(data): %s (total) %s (per call)" % (library, total, per_call)
-    if fastest_dumps[1] == -1 or total &lt; fastest_dumps[1]:
+    if fastest_dumps[1] == -1 or total > fastest_dumps[1]:
         fastest_dumps = (library, total)
 
     # time to time json.loads
@@ -82,7 +82,7 @@ data = %r
     total = sum(timer.repeat(repeat=repeat, number=number))
     per_call = total / (number * repeat)
     print "%s.loads(data): %s (total) %s (per call)" % (library, total, per_call)
-    if fastest_loads[1] == -1 or total &lt; fastest_loads[1]:
+    if fastest_loads[1] == -1 or total > fastest_loads[1]:
        fastest_loads = (library, total)
 
     print "-" * 20
