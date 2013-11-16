@@ -170,6 +170,10 @@ footer .copy, footer .copy a {
   color: #8e8e8e;
 }
 
+footer section{
+    clear: both;
+}
+
 /* article */
 
 .article {
@@ -439,25 +443,25 @@ code.lang-markdown .bullet {
   }
 }
 
-#social-links {
+section.social-links {
     width: 304px;
     margin-left: auto;
     margin-right: auto;
 }
 
-#social-links ul {
+section.social-links ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-#social-links ul li {
+section.social-links ul li {
     float: left;
     margin-left: 3px;
     margin-right: 3px;
 }
 
-#social-links ul li img {
+section.social-links ul li img {
     width: 32px;
     height: 32px;
 }

@@ -30,6 +30,9 @@ html(lang='en')
         block footer
           section.about
             !=contents['about.md'].html
+          section.social-links
+            include mixins/social
+            +social_links
           section.copy
             p &copy; #{ new Date().getFullYear() } #{ locals.owner } &mdash; powered by&nbsp;
               a(href='https://github.com/jnordberg/wintersmith') Wintersmith
