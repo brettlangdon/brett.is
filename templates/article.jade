@@ -1,4 +1,4 @@
-
+include mixins/disqus
 extends layout
 
 block append vars
@@ -18,8 +18,9 @@ block content
   article.article
     section.content!= typogr(page.html).typogrify()
 
+    section.comments
+      +disqus
+
 block prepend footer
   div.nav
     a(href=contents.index.url) « Full blog
-
-
