@@ -1,24 +1,27 @@
+WINTERSMITH = ./node_modules/.bin/wintersmith
+ARTICLE_DIR = ./contents/is/writing/about
+
 build:
-	./node_modules/.bin/wintersmith build
+	@$(WINTERSMITH) build
 
 clean:
-	@ rm -rf build
+	@rm -rf build
 
 preview:
-	./node_modules/.bin/wintersmith preview
+	@$(WINTERSMITH) preview
 
 add_article:
 	@echo "Enter Article Title: "
 	@read title;\
 	dir=`echo $$title | sed "s/ /-/g"`;\
-	mkdir -p contents/is/writing/about/$$dir;\
-	cat base.md | sed "s/{title}/$$title/g" | sed s/{date}/`date "+%Y-%m-%d"`/g> contents/is/writing/about/$$dir/index.md;\
-	emacs contents/is/writing/about/$$dir/index.md
+	mkdir -p $(ARTICLE_DIR)/$$dir;\
+	cat base.md | sed "s/{title}/$$title/g" | sed s/{date}/`date "+%Y-%m-%d"`/g> $(ARTICLE_DIR)/$$dir/index.md;\
+	emacs $(ARTICLE_DIR)/$$dir/index.md
 
 remove_article:
 	@echo "Enter Article Title: "
 	@read title;\
 	dir=`echo $$title | sed "s/ /-/g"`;\
-	rm -rf contents/is/writing/about/$$dir
+	rm -rf $(ARTICLE_DIR)/$$dir
 
 .PHONY: build clean preview add_article remove_article
