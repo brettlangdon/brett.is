@@ -4,3 +4,7 @@ author: Brett Langdon
 date: {date}
 template: article.jade
 ---
+
+Summary
+
+---
