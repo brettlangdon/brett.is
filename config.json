@@ -3,7 +3,7 @@
     "url": "http://brett.is",
     "name": "Brett.Is",
     "owner": "Brett Langdon",
-    "description": "Personal Blog of Brett Langdon"
+    "description": "Blogging about all kinds of things"
   },
   "plugins": [
     "./plugins/paginator.coffee"
