@@ -207,6 +207,10 @@ footer .copy, footer .copy a {
   display: inline;
 }
 
+article.intro .content {
+  text-align: center;
+}
+
 .article.intro .content .more {
   text-decoration: underline;
   font-weight: 700;
@@ -434,4 +438,3 @@ code.lang-markdown .bullet {
     margin-bottom: 1em;
   }
 }
-
