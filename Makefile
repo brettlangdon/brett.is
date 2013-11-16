@@ -24,4 +24,10 @@ remove_article:
 	dir=`echo $$title | sed "s/ /-/g"`;\
 	rm -rf $(ARTICLE_DIR)/$$dir
 
-.PHONY: build clean preview add_article remove_article
+edit_article:
+	@echo "Enter Article Title: "
+	@read title;\
+	dir=`echo $$title | sed "s/ /-/g"`;\
+	emacs $(ARTICLE_DIR)/$$dir/index.md
+
+.PHONY: build clean preview add_article remove_article edit_article
