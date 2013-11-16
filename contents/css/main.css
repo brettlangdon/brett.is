@@ -438,3 +438,26 @@ code.lang-markdown .bullet {
     margin-bottom: 1em;
   }
 }
+
+#social-links {
+    width: 304px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#social-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#social-links ul li {
+    float: left;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#social-links ul li img {
+    width: 32px;
+    height: 32px;
+}

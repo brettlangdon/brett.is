@@ -1,0 +1,23 @@
+mixin link_img(type, link, image)
+  a(href=link, target="_blank")
+    img(src=image, title="Follow Me on: " + type, alt="Follow Me on: " + type)
+
+mixin social_links
+  ul
+    li
+      +link_img("Google+", "//plus.google.com/100527884089547887285/", "/img/googleplus.png")
+    li
+      +link_img("Twitter", "//www.twitter.com/#!/brett_langdon", "/img/twitter.png")
+    li
+      +link_img("Linkedin", "//www.linkedin.com/in/brettlangdon", "/img/linkedin.png")
+    li
+      +link_img("Pandora", "//www.pandora.com/#!/profile/activity/brett1129", "/img/pandora.png")
+    li
+      +link_img("Geeklist", "//geekli.st/brett_langdon", "/img/geeklist.png")
+    li
+      +link_img("GitHub", "//github.com/brettlangdon", "/img/github.svg")
+    li
+      +link_img("RSS", "//brett.is/feed.xml", "/img/rss.png")
+    li
+      +link_img("E-Mail", "mailto:brett@blangdon.com", "/img/email.png")
+  span(style="clear:both")
