@@ -13,7 +13,7 @@ preview:
 add_article:
 	@echo "Enter Article Title: "
 	@read title;\
-	dir=`echo $$title | sed "s/ /-/g"`;\
+	dir=`echo $$title | sed "s/ /-/g" | tr "[:upper:]" "[:lower:]"`;\
 	mkdir -p $(ARTICLE_DIR)/$$dir;\
 	cat base.md | sed "s/{title}/$$title/g" | sed s/{date}/`date "+%Y-%m-%d"`/g> $(ARTICLE_DIR)/$$dir/index.md;\
 	$$EDITOR $(ARTICLE_DIR)/$$dir/index.md
