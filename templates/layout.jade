@@ -19,7 +19,9 @@ html(lang='en')
         block header
           div.logo
             h1
-              a(href=locals.url)= locals.name
+              a(href=locals.url)
+                img(src="/img/avatar.png")
+                = locals.name
             p.description= locals.description
     div#content
       div.content-wrap
