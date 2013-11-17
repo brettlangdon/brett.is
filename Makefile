@@ -30,4 +30,9 @@ edit_article:
 	dir=`echo $$title | sed "s/ /-/g"`;\
 	$$EDITOR $(ARTICLE_DIR)/$$dir/index.md
 
-.PHONY: build clean preview add_article remove_article edit_article
+pull:
+	git pull
+
+update: pull build
+
+.PHONY: build clean preview add_article remove_article edit_article pull update
