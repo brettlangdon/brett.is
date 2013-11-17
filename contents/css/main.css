@@ -90,8 +90,20 @@ hr {
 .header h1 {
   font-size: 2.6em;
   text-align: center;
-  font-weight: 700;
   margin: 0;
+  font-size: 2.5em;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: -0.2em;
+}
+
+.header .logo h1 img {
+  border-radius: .1em;
+  margin-right: .1em;
+}
+
+.header .logo {
+  border-bottom: 1px dashed #d2d2d2;
 }
 
 .header a, .header a:hover {
@@ -114,13 +126,6 @@ hr {
   font-style: italic;
   text-align: center;
   margin-top: -0.3em;
-}
-
-body.article-detail > header h1 {
-  font-size: 2.5em;
-  font-style: italic;
-  font-weight: 400;
-  margin-bottom: -0.2em;
 }
 
 body.article-detail > header {
@@ -171,7 +176,7 @@ footer .copy, footer .copy a {
 }
 
 footer section{
-    clear: both;
+  clear: both;
 }
 
 /* article */
@@ -258,8 +263,8 @@ article.intro .content {
   text-decoration: none;
 }
 .archive li:not(:last-child) {
-	border-bottom: 1px solid #d2d2d2;
-	margin-bottom: -1px;
+  border-bottom: 1px solid #d2d2d2;
+  margin-bottom: -1px;
 }
 
 .archive a.last, .archive span.last {
