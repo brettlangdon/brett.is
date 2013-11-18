@@ -141,8 +141,8 @@ footer {
 
 footer .nav {
   text-align: center;
-  margin-top: 5em;
-  margin-bottom: 3.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 footer .nav a {
@@ -153,7 +153,7 @@ footer .nav a {
 
 footer .about {
   border-top: 1px dashed #d2d2d2;
-  padding: 2.2em 3em;
+  padding: 1em 1em;
   font-size: 0.7em;
   -webkit-column-count: 3;
   -moz-column-count: 3;
@@ -245,7 +245,7 @@ article.intro .content {
 
 .archive {
   width: 32em;
-  margin: 5em auto 6em;
+  margin: 1em auto 1em;
   padding-left: 2em;
 }
 
