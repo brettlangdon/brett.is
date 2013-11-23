@@ -49,18 +49,18 @@ class HoneyThread(threading.Thread):
         print 'Listening on: ', port
         super(HoneyThread, self).__init__()
 
-        def run(self):
-            while True:
-                channel, details = self.sock.accept()
-                logstr = (
-                    'Connection from %s:%s on port %s\r\n' %
-                    (details[0], details[1], self.port)
-                )
-                self.logfile.write('%s\r\n' % logstr)
-                print logstr
-                self.logfile.flush()
-                channel.send('You Just Got Stuck In Some Honey')
-                channel.close()
+    def run(self):
+        while True:
+            channel, details = self.sock.accept()
+            logstr = (
+                'Connection from %s:%s on port %s\r\n' %
+                (details[0], details[1], self.port)
+            )
+            self.logfile.write('%s\r\n' % logstr)
+            print logstr
+            self.logfile.flush()
+            channel.send('You Just Got Stuck In Some Honey')
+            channel.close()
 
 ports = []
 
