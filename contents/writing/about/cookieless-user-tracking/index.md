@@ -62,7 +62,7 @@ the new id.
 There is a feature of HTTP requests called an
 <a href="http://en.wikipedia.org/wiki/HTTP_ETag" target="_blank">ETag Header</a>
 which can be exploited for the sake of user tracking. The way an ETag works is
-simply when a request is made the server will respond with an ETag header with
+when a request is made the server will respond with an ETag header with
 a given value (usually it is an id for the requested document, or maybe a hash
 of it), whenever the bowser then makes another request for that document it will
 send an _If-None-Match_ header with the value of _ETag_ provided by the server
@@ -108,8 +108,41 @@ if __name__ == "__main__":
 
 ## Redirect Caching
 
-Redirect caching works in a similar matter to using ETag headers,
-you end up relying on browser caches to store your user ids.
+Redirect caching is similar in concept to the the ETag tracking method where
+we rely on the browser cache to store the user id for us. With redirect caching
+we have our tracking url `/track/`, when someone goes there we perform a 301
+redirect to `/<user_id>/track`. The users browser will then cache that 301
+redirect and the next time the user goes to `/track` it will just go to
+`/<user_id>/track` instead.
+
+Just like the ETag method we run into an issue where this method really only
+works for a single endpoint url. We cannot use it for an end all be all for
+tracking users across a site or multiple sites.
+
+### Example Server
+```python
+from uuid import uuid4
+from wsgiref.simple_server import make_server
+
+
+def tracking_server(environ, start_response):
+    if environ["PATH_INFO"] == "/track":
+        start_response("301 Moved Permanently", [
+            ("Location", "/%s/track" % uuid4().hex),
+        ])
+    else:
+        start_response("200 Ok", [])
+    return [""]
+
+
+if __name__ == "__main__":
+    try:
+        httpd = make_server("", 8000, tracking_server)
+        print "Tracking Server Listening on Port 8000..."
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print "Exiting..."
+```
 
 
 ## Ever Cookie
@@ -117,10 +150,18 @@ you end up relying on browser caches to store your user ids.
 A project worth noting is Samy Kamkar's
 <a href="http://samy.pl/evercookie/" target="_blank">Evercookie</a>
 which uses standard cookies, flash objects, silverlight isolated storage,
-web history, etags, web cache, local storage, global storage... and more.
+web history, etags, web cache, local storage, global storage... and more
+all at the same time to track users. This library exercises every possible
+method for storing a user id which makes it a reliable method for ensuring
+that the id is stored, but at the cost of being very intrusive and persistent.
 
 
 ## Other Methods
 
 I am sure there are other methods out there, these are just the few that I
 decided to focus on. If anyone has any other methods or ideas please leave a comment.
+
+## References
+* <a href="http://ochronus.com/tracking-without-cookies/" target="_blank">http://ochronus.com/tracking-without-cookies/</a>
+* <a href="http://ochronus.com/user-tracking-http-redirect/" target="_blank">http://ochronus.com/user-tracking-http-redirect/</a>
+* <a href="http://samy.pl/evercookie/" target="_blank">http://samy.pl/evercookie/</a>
