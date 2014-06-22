@@ -2,6 +2,7 @@ WINTERSMITH = ./node_modules/.bin/wintersmith
 ARTICLE_DIR = ./contents/writing/about
 
 build:
+	@./node_modules/.bin/cleancss ./contents/css/main.css > ./contents/css/main.min.css
 	@$(WINTERSMITH) build
 
 clean:

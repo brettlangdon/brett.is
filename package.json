@@ -5,6 +5,7 @@
   "main": "",
   "private": true,
   "dependencies": {
+    "clean-css": "^2.2.2",
     "moment": "~2.3.1",
     "typogr": "~0.5.2",
     "underscore": "~1.4.4",
