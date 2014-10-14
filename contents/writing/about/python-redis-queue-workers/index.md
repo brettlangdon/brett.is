@@ -35,7 +35,8 @@ def process(job_id, job_data):
 
 def main(client, processing_queue, all_queue):
     while True:
-        # try to fetch a job id from "<all_queue>:jobs" and push it to "<processing_queue>:jobs"
+        # try to fetch a job id from "<all_queue>:jobs"
+        # and push it to "<processing_queue>:jobs"
         job_id = client.brpoplpush(all_queue, processing_queue)
         if not job_id:
             continue
