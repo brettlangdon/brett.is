@@ -32,7 +32,7 @@ edit_article:
 	$$EDITOR $(ARTICLE_DIR)/$$dir/index.md
 
 pull:
-	git pull
+	git pull origin master
 
 update: pull build
 
