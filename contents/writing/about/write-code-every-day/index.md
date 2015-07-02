@@ -34,7 +34,7 @@ there to copy. The idea I go for is to try and replicate the overall goal of the
 mean writing it in a different language, or changing the API for it or just taking some wacky new approach to solving the same issue.
 
 More times than not the above exercise leads me to a problem that I then can go off and solve. For example, a few weeks ago
-I sat down and decided I wanted to write a web server in go (think `nginx`/`apache`). I knew going into the project I wanted
+I sat down and decided I wanted to write a web server in `go` (think `nginx`/`apache`). I knew going into the project I wanted
 a really nice and easy to use configuration file to define the settings. So, I did what most people do these days I and
 used `json`, but that didn't really feel right to me. I then tried `yaml`, but yet again didn't feel like what I wanted. I
 probably could have used `ini` format and made custom rules for the keys and values, but again, this is hacky. This spawned
