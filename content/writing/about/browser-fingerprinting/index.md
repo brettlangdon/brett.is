@@ -54,7 +54,7 @@ client, as long as they have javascript enabled (which seems to be a thing which
 most websites cannot properly function without), which allows the client to be
 identified even if they do not allow cookies for their browser.
 
-##How do we do it?
+## How do we do it?
 
 Like I mentioned before to generate a browser fingerprint you must have javascript
 enabled as it is the easiest way to gather the most information about a browser.
