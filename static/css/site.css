@@ -1,0 +1,9 @@
+#wrapper,
+.profile #wrapper,
+#wrapper.home {
+    max-width: 900px;
+}
+
+a.symbol {
+    margin-right: 0.7rem;
+}
