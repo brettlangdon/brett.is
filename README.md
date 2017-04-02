@@ -1,4 +1,4 @@
 brett.is
 ========
 
-Source code for the blog [brett.is](http://brett.is)
+Source code for my personal blog [brett.is](http://brett.is)
